@@ -1,0 +1,40 @@
+﻿@page
+@model MoviesApplication.Pages.Movies.DeleteModel
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Movie</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Movie.MovieName)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Movie.MovieName)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Movie.MovieType)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Movie.MovieType)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Movie.MovieLength)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Movie.MovieLength)
+        </dd>
+    </dl>
+    
+    <form method="post">
+        <input type="hidden" asp-for="Movie.ID" />
+        <input type="submit" value="Delete" class="btn btn-default" /> |
+        <a asp-page="./Index">Back to List</a>
+    </form>
+</div>
